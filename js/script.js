@@ -61,33 +61,16 @@ function handleFormSubmission() {
   event.preventDefault();
   let countToInput = parseInt(document.getElementById("countTo").value);
   let countByInput = parseInt(document.getElementById("countBy").value);
-  let sum = 0;
-  let counter = 0; 
-  let numArray = []
+  let textOutput = document.getElementById("outputCount");
+  let numArray = [];
 
-  let numResults = countToInput / countByInput;
-
-  while(counter < numResults )
-  {
-      sum = sum + countByInput;
-      numArray.push(sum);
-      counter++
+  for(i = countByInput; i <= countToInput; i += countByInput) {
+    numArray.push(i);
+    console.log(numArray.join(" "));
   }
-   
-   console.log(numArray);
-  
-  document.getElementById("countToSpan").innerText = countTo; 
-  document.getElementById("countBySpan").innerText = countBy;
-
-  
-  numArray.forEach(function (element) { 
-    
-  document.getElementById("outputCount").innerText = element;
-  
-  })
-
-
-
+  document.getElementById("countToSpan").innerText = countToInput; 
+  document.getElementById("countBySpan").innerText = countByInput;
+  textOutput.innerText = numArray.join();
 }
 
 window.addEventListener("load", function() {
