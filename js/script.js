@@ -59,11 +59,34 @@ function boldPassage(word, text) {
 
 function handleFormSubmission() {
   event.preventDefault();
-  const countTo = document.getElementById("countTo").value;
-  const countBy = document.getElementById("countBy").value;
+  let countToInput = parseInt(document.getElementById("countTo").value);
+  let countByInput = parseInt(document.getElementById("countBy").value);
+  let sum = 0;
+  let counter = 0; 
+  let numArray = []
 
+  let numResults = countToInput / countByInput;
+
+  while(counter < numResults )
+  {
+      sum = sum + countByInput;
+      numArray.push(sum);
+      counter++
+  }
+   
+   console.log(numArray);
+  
   document.getElementById("countToSpan").innerText = countTo; 
   document.getElementById("countBySpan").innerText = countBy;
+
+  
+  numArray.forEach(function (element) { 
+    
+  document.getElementById("outputCount").innerText = element;
+  
+  })
+
+
 
 }
 
