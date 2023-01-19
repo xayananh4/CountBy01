@@ -59,18 +59,13 @@ function boldPassage(word, text) {
 
 function handleFormSubmission() {
   event.preventDefault();
-  const passage = document.getElementById("text-passage").value;
-  const word = document.getElementById("word").value;
-  const wordCount = wordCounter(passage);
-  const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
-  document.getElementById("total-count").innerText = wordCount;
-  document.getElementById("selected-count").innerText = occurrencesOfWord;
-  let boldedPassage = boldPassage(word, passage);
-  if (boldedPassage) {
-    document.querySelector("div#bolded-passage").append(boldedPassage);
-  } else {
-    document.querySelector("div#bolded-passage").innerText = null;
-  }
+  const countTo = document.getElementById("countTo").value;
+  const countBy = document.getElementById("countBy").value;
+
+  document.getElementById("countTo").innerText = countTo;
+  
+  document.getElementById("countBy").innerText = countBy;
+
 }
 
 window.addEventListener("load", function() {
