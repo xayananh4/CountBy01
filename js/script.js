@@ -62,9 +62,8 @@ function handleFormSubmission() {
   const countTo = document.getElementById("countTo").value;
   const countBy = document.getElementById("countBy").value;
 
-  document.getElementById("countTo").innerText = countTo;
-  
-  document.getElementById("countBy").innerText = countBy;
+  document.getElementById("countToSpan").innerText = countTo; 
+  document.getElementById("countBySpan").innerText = countBy;
 
 }
 
